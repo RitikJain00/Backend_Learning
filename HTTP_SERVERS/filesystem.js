@@ -30,14 +30,15 @@ app.get('/', (req,res) => {
     })
 
     app.get('/filesystem/:fileName', (req,res) =>{
-        const fileName =req.params.fileName;
-        console.log(fileName)
+
+        const fileName =req.params.fileName;  // read input fileName
         
-        const filePath = path.join(__dirname, 'files', fileName);
-        console.log(`Resolved file path: ${filePath}`);
+
+        const filePath = path.join(__dirname, 'files', fileName); // creating a path
+    
 
 
-        fs.readFile(filePath, "utf-8", (err,data) =>
+        fs.readFile(filePath, "utf-8", (err,data) =>         // reading a file
         {
             if(err) {
                 res.status(404).json({
