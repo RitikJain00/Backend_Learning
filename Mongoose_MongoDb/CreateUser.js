@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");   // helps to create a uinqe token for user
 const bcrypt = require("bcrypt");       // helps to create hashed password
 const jwtPassword = "2209";             // jwtPassword is used to verify the token of user
 
-mongoose.connect("mongodb+srv://admin:admin@cluster0.ugnn6.mongodb.net/userApp")  // connect the database
+mongoose.connect("mongodb+srv://username:password@cluster0.ugnn6.mongodb.net/userApp")  // connect the database
 
 const User = mongoose.model("User", {           // model of database
     name: String,
